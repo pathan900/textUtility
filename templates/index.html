@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>textUtility</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">TextUtils.in</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="#about">About Us <span class="sr-only">(current)</span></a>
+    </li>
+          <li class="nav-item active">
+        <a class="nav-link" href="#contactus">Contact Us <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>TextUtils</strong> Welcome To TextUtils...!
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+    <div class="container">
+    <form action="/analyze" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter Your Text HERE.....</label>
+    <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="10"></textarea>
+  </div>
+       <div class="custom-control custom-switch">
+  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">Remove Punctuations</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input type="checkbox" name="uppercase" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">UPPER_CASE</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input type="checkbox" name="newlineremover" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">Remove New Line</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input type="checkbox" name="extraspaceremover" class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4">Remove Extra Space</label>
+</div>
+              <div class="custom-control custom-switch">
+  <input type="checkbox" name="charcounter" class="custom-control-input" id="customSwitch5">
+  <label class="custom-control-label" for="customSwitch5">Count Characters</label>
+</div>
+        <button type="submit" class="btn btn-success mt-3 mb-3">Analyze</button>
+</form>
+</div>
+    <div class="alert alert-primary container mt-3" role="alert">
+  <h4 class="alert-heading" id="about"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div> About Us</h4>
+  <p>Text Utils is a website where you can Analyze your text .Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet alias magnam sit
+      deserunt ducimus est omnis placeat nihil, beatae mollitia. Qui et ullam in culpa, labore voluptatem odit saepe autem, distinctio
+      error eum quibusdam explicabo fugiat fugit molestiae debitis ex reiciendis modi assumenda, voluptates iusto non ipsum? Dolores a
+      minus porro blanditiis et similique corporis illum sunt cum reiciendis voluptate, perspiciatis autem culpa vero beatae quas
+      voluptatibus temporibus? Itaque quis repellat tempora ratione, totam quas veniam iure assumenda quae unde cumque voluptatibus,
+      accusamus pariatur. Recusandae quibusdam eligendi iusto perferendis atque, porro hic amet consequatur reprehenderit? Modi
+      molestiae ut impedit facere.</p>
+  <hr>
+  <p class="mb-1">Just enter your text and let the TextUtils do the Magic...! </p>
+</div>
+    <form class="container" id="contactus">
+  <div class="form-group">
+      <h3><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Contact Us</h3>
+      <div>
+          <p>Email Address : textutils@gmail.com</p>
+          <p>Phone : 9991234567</p>
+      </div>
+      <h3><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div> Write to Us</h3>
+    <label for="exampleFormControlInput1"> Enter Your Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea2">Enter your query below...</label>
+    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+  </div>
+        <button type="submit" class="btn btn-success mt-0 mb-3">Submit</button>
+</form>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
